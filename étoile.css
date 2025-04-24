@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #001f3f, #0074D9);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.game-container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px #FFF;
+}
+
+#game-area {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    height: 500px;
+    background: #001f3f;
+    border: 5px solid #FFD700;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    animation: fall linear;
+}
+
+.score {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #FFDC00;
+}
+
+@keyframes fall {
+    0% {
+        top: -30px;
+    }
+    100% {
+        top: 500px;
+    }
+    .star-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .bg-star {
+        position: absolute;
+        color: #fffacd;
+        font-size: 10px;
+        animation: twinkle 2s infinite ease-in-out alternate;
+    }
+    @keyframes twinkle {
+        0% {
+            opacity: 0.3;
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+    // Générer un ciel étoilé
+    function generateBackgroundStars(count=100) {
+        const bg=document.getElementById('star-bg');
+        for (let i=0;
+        i < count;
+        i++) {
+            const star=document.createElement('div');
+            star.classList.add('bg-star');
+            star.textContent='✨';
+            // Position aléatoire dans l’écran
+            star.style.left=Math.random() * 100+'vw';
+            star.style.top=Math.random() * 100+'vh';
+            // Taille aléatoire
+            const size=8+Math.random() * 8;
+            star.style.fontSize=size+'px';
+            // Animation delay pour que tout ne scintille pas en même temps
+            star.style.animationDelay=Math.random() * 2+'s';
+            bg.appendChild(star);
+        }
+    }
+    generateBackgroundStars();
+}
