@@ -1,0 +1,56 @@
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #fffef0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff7f50;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fffacd;
+    border: 2px solid #ffa07a;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cell:hover {
+    background-color: #ffeabf;
+}
+
+#status {
+    font-size: 20px;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ffb347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ffa500;
+}
