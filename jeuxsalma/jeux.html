@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Code le Robot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Code le Robot 🤖</h2>
+
+  <div id="grid"></div>
+
+  <textarea id="commands" rows="5" cols="40" placeholder="Ex: avancer&#10;tourner_droite&#10;avancer..."></textarea><br>
+  <button onclick="runCode()">Lancer</button>
+  <script>
+    const gridSize = 5;
+    let robotPos = { x: 0, y: 0 };
+    let targetPos = { x: 3, y: 2 }; // Will be randomized in runCode()
+    
+    function createGrid() {
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      for (let y = 0; y < gridSize; y++) {
+        for (let x = 0; x < gridSize; x++) {
+          const cell = document.createElement("div");
+          cell.className = "cell";
+          if (x === robotPos.x && y === robotPos.y) {
+            cell.classList.add("robot");
+            cell.textContent = "🤖";
+          }
+          if (x === targetPos.x && y === targetPos.y) {
+            cell.classList.add("target");
+            cell.textContent = "🎯";
+          }
+          grid.appendChild(cell);
+        }
+      }
+    }
+    
+    function move(command) {
+      switch (command) {
+        case "monter":
+          if (robotPos.y > 0) robotPos.y--;
+          break;
+        case "descendre":
+          if (robotPos.y < gridSize - 1) robotPos.y++;
+          break;
+        case "gauche":
+          if (robotPos.x > 0) robotPos.x--;
+          break;
+        case "droite":
+          if (robotPos.x < gridSize - 1) robotPos.x++;
+          break;
+      }
+    }
+    
+    function showVictory() {
+      const overlay = document.createElement("div");
+      overlay.className = "victory-overlay";
+      overlay.innerHTML = `
+        <div class="victory-content">
+          🎆 Tu as gagné ! 🎉<br>
+          <button onclick="restart()">Rejouer</button>
+          <div class="fireworks"></div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }
+    
+    function restart() {
+      const overlay = document.querySelector(".victory-overlay");
+      if (overlay) overlay.remove();
+      runCode();
+    }
+    
+    function runCode() {
+      robotPos = { x: 0, y: 0 };
+    
+      // Generate new random target position, not (0,0)
+      do {
+        targetPos.x = Math.floor(Math.random() * gridSize);
+        targetPos.y = Math.floor(Math.random() * gridSize);
+      } while (targetPos.x === 0 && targetPos.y === 0);
+    
+      const commands = document.getElementById("commands").value
+        .trim()
+        .toLowerCase()
+        .split("\n")
+        .filter(c => c !== "");
+      
+      let i = 0;
+      createGrid();
+    
+      const interval = setInterval(() => {
+        if (i < commands.length) {
+          move(commands[i]);
+          createGrid();
+          i++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            if (robotPos.x === targetPos.x && robotPos.y === targetPos.y) {
+              showVictory();
+            } else {
+              alert("Le robot est perdu 😅");
+            }
+          }, 300);
+        }
+      }, 600);
+    }
+    
+    createGrid();
+    </script>
+    
+    
+    
+
+</body>
+</html>
+
