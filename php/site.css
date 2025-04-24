@@ -1,0 +1,65 @@
+.si {
+      height: 105px;
+      width: 150px;
+    }
+    
+    .bar {
+      height: 110px;
+      background-color: #cad6ec;
+      width: 100%;
+      display: flex;
+      border-bottom: 2px solid #556c9642;
+}
+    
+    
+    body, html {
+      background-color:#cad6ec;
+      margin: 0;
+      padding: 0;
+    }
+.body{background-image:url("dino/bg.png");
+      background-size: cover; /* ou "contain" */
+      background-position: center;
+      background-repeat: no-repeat;
+      height:500px;}
+      
+.home {
+      color: #ce93d8;
+      margin-left: 470px;
+      margin-top: 40px;
+      font-size: 30px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    
+.home:hover {
+      text-decoration-line: underline;
+    }
+    
+    .bienvenue {
+      color: #3a8c99eb;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 36px; /* Taille de police ajoutée */
+      text-align: center; /* Centré */
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 50px;
+    }
+    
+    .nightcontent {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      overflow: hidden;
+    }
+.wave{background-image:url("dino/wave1.png");
+      height:666px;
+      background-repeat: no-repeat;
+      margin-top: -370px;
+      background: cover;
+      width:800px;}
+.wave1{background-image:url("dino/wave1.png");
+      margin-left: 666px;}
