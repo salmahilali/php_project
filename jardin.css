@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #cce5ff, #e6f2ff);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #66bb6a;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-left: 10px;
+    background-color: #a5d6a7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#garden {
+    margin-top: 30px;
+    min-height: 300px;
+    background: #dcedc8;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    border: 4px dashed #81c784;
+}
+
+
+/* Fleur magique */
+
+.flower {
+    position: relative;
+    background-color: #ffffffcc;
+    border: 2px solid #81c784;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    color: #2e7d32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: grow 3s forwards;
+}
+
+
+/* Tige de la fleur */
+
+.flower:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: #4caf50;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    animation: growStem 3s forwards;
+}
+
+
+/* Pétales de la fleur */
+
+.flower .petal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff9800;
+    border-radius: 50%;
+    animation: growPetals 3s forwards;
+}
+
+.flower .petal:nth-child(1) {
+    top: 10px;
+    left: 10px;
+}
+
+.flower .petal:nth-child(2) {
+    top: 10px;
+    right: 10px;
+}
+
+.flower .petal:nth-child(3) {
+    bottom: 10px;
+    left: 10px;
+}
+
+.flower .petal:nth-child(4) {
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/* Animation de la croissance */
+
+@keyframes growStem {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+
+@keyframes growPetals {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
