@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre-Papier-Ciseaux 🪴</title>
+    <link rel="stylesheet" href="pierre.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>Pierre-Papier-Ciseaux 🎮</h1>
+        <div class="choices">
+            <button class="choice-btn" onclick="playGame('rock')">🪨 Pierre</button>
+            <button class="choice-btn" onclick="playGame('paper')">📄 Papier</button>
+            <button class="choice-btn" onclick="playGame('scissors')">✂️ Ciseaux</button>
+        </div>
+        <div id="result"></div>
+        <div id="computer-choice"></div>
+        <div id="user-choice"></div>
+        <button class="reset-btn" onclick="resetGame()">Rejouer</button>
+    </div>
+
+    <script src="pierre.js"></script>
+</body>
+
+</html>
