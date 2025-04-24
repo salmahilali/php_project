@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Whack-a-Mole</title>
+
+  <!-- === CSS intégré === -->
+  <style>
+    body{
+      margin:0;padding:20px;text-align:center;
+      font-family:Arial,Helvetica,sans-serif;background:#91c3ef;
+    }
+    h1{color:#040638;margin:8px 0;margin-top: 140px;}
+    #panel{font-size:1.2rem;margin-bottom:12px}
+    #grid{
+      width:330px;margin:auto;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+    }
+    .hole{
+      width:100px;height:100px;border-radius:50%;
+      background:#e4e5ea;cursor:pointer;position:relative;
+    }
+    .hole.mole svg{position:absolute;inset:12%;pointer-events:none}
+    button{
+      margin-top:15px;padding:10px 28px;font-size:1rem;
+      border:none;border-radius:6px;cursor:pointer;
+      background:#f0300e;color:#fff;
+    }
+    button:hover{background:#2e7d32}
+    #result{margin-top:10px;font-weight:bold;color:#4e342e}
+  </style>
+</head>
+<body>
+
+  <h1>Whack-a-Mole 🦔</h1>
+
+  <div id="panel">
+    ⏱️ <span id="time">30</span>s |
+    ⭐ <span id="score">0</span>
+  </div>
+
+  <!-- 9 trous -->
+  <div id="grid">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <button id="start">▶️ Rejouer</button>
+  <p id="result"></p>
+
+  <!-- === JavaScript intégré === -->
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const holes   = document.querySelectorAll('.hole');
+      const btn     = document.getElementById('start');
+      const scoreEl = document.getElementById('score');
+      const timeEl  = document.getElementById('time');
+      const result  = document.getElementById('result');
+
+      let score, timeLeft, active, moleTimer, gameTimer;
+
+      const moleSVG=`<svg viewBox="0 0 64 64">
+        <ellipse cx="32" cy="50" rx="24" ry="10" fill="#5d4037"/>
+        <circle cx="32" cy="28" r="16" fill="#8d6e63"/>
+        <circle cx="26" cy="24" r="3" fill="#fff"/>
+        <circle cx="38" cy="24" r="3" fill="#fff"/>
+        <circle cx="26" cy="24" r="1" fill="#000"/>
+        <circle cx="38" cy="24" r="1" fill="#000"/>
+        <circle cx="32" cy="31" r="3" fill="#d84315"/>
+      </svg>`;
+
+      function popMole(){
+        if(active){ active.classList.remove('mole'); active.innerHTML=''; }
+        active = holes[Math.floor(Math.random()*holes.length)];
+        active.classList.add('mole');
+        active.innerHTML = moleSVG;
+      }
+
+      function startGame(){
+        score   = 0;
+        timeLeft= 30;
+        scoreEl.textContent = score;
+        timeEl.textContent  = timeLeft;
+        result.textContent  = '';
+        btn.disabled = true;
+
+        popMole();
+        moleTimer = setInterval(popMole,800);
+        gameTimer = setInterval(()=>{
+          timeLeft--;
+          timeEl.textContent = timeLeft;
+          if(timeLeft === 0) endGame();
+        },1000);
+      }
+
+      function endGame(){
+        clearInterval(moleTimer);
+        clearInterval(gameTimer);
+        if(active){ active.classList.remove('mole'); active.innerHTML=''; }
+        result.textContent = `🎉 Partie terminée ! Score final : ${score}`;
+        btn.disabled = false;
+      }
+
+      holes.forEach(h=>h.addEventListener('click',()=>{
+        if(h === active){
+          score++;
+          scoreEl.textContent = score;
+          h.classList.remove('mole'); h.innerHTML='';
+          active = null;
+        }
+      }));
+
+      btn.addEventListener('click',startGame);
+    });
+  </script>
+</body>
+</html>
