@@ -1,0 +1,129 @@
+/* Global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("dino/bg1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Comic ;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #1f183872; /* Transparent blue */
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.bar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Logo */
+.si {
+  height: 100px;
+  width: auto;
+  margin-left: -20px;
+}
+
+/* Links Section */
+.links {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.nav-link img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+/* Title under each link */
+.link-title {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover effect */
+.link-item:hover img {
+  transform: scale(1.1);
+
+}
+
+.link-item:hover .link-title {
+  opacity: 1;
+  color: #ffffff;
+  font-family: comic;
+  
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* prend toute la hauteur de l'écran */
+  position: relative;
+}
+.hero {
+  background-color: #1f183894 ;/* fond sombre semi-transparent */
+  border-radius: 20px;
+
+  padding: 40px;
+  width: 1100px;
+  text-align: center;
+  color: #78a54db5;
+  box-shadow: #1f183872;
+}
+.bienvenue {
+  color: #ffffff;
+  font-family: Comic Sans MS;
+  font-size: 50px;
+
+  text-align: center;
+  margin-top: 20px;
+}
+.cliquer{color: #ffffff;
+  font-family: Comic Sans MS;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;}
+/* Night content (door animation) */
+.nightcontent {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* You can add more styles for your animated door here... */
+
