@@ -1,0 +1,104 @@
+body {
+    background-image: url('dino/bg1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1550px auto; /* or you can use contain if you want it to scale */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  img {
+    height: 175px;
+    width: 300px;
+    margin: 20px auto 10px;
+    display: block;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .login-container {
+    background-color: #78a54db5;
+    border-radius: 30px;
+    height:450px;
+    width:400px ;
+    padding: 30px 20px;
+    box-shadow: 0 5px 0 #1a502d99;
+    text-align: center;
+    animation: pop-in 1s ease;
+  }
+  
+  @keyframes pop-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  form {
+    margin-top: 10px;
+  }
+  
+  input {
+    margin: 10px 0;
+    height: 30px;
+    width: 270px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+  }
+  
+  input:focus {
+    border: 3px solid rgb(174, 95, 158);
+    outline: none;
+  }
+  
+  button {
+    background: #a8b7d3;
+    color: #ffffff;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 0 rgba(87, 64, 191, 0.442);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s, background 0.3s;
+    font-size: 1.5rem;
+    font-family:cursive;
+    font-weight: bold;
+
+  }
+  
+  button:hover {
+    background-color:rgba(245, 122, 171, 0.974);
+    transform: scale(1.05);
+  }
+  
+  .sparkle {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    animation: sparkleAnim 1s ease forwards;
+  }
+  
+  @keyframes sparkleAnim {
+    0% { opacity: 0; transform: translateY(0) scale(0.5); }
+    50% { opacity: 1; transform: translateY(-10px) scale(1.2); }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.5); }
+  }
+
+  .lock-container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

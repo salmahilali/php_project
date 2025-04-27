@@ -1,0 +1,50 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 800px; /* Hauteur de la page */
+    width: 1550px; /* Largeur de la page */
+    background-image: 
+        linear-gradient(to top, #001f3fbc, rgba(31, 24, 56, 0.7)), /* the gradient with your overlay color */
+        url("dino/bg1.png"); 
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 1550px 800px;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    font-size: 2em;
+  }
+.lune{height:300px;
+      width:auto;
+      margin-top: 80px;
+      position: absolute;
+      animation: balayage 5s infinite alternate ease-in-out;
+      }
+      @keyframes balayage {
+        0% {
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        100% {
+          left: calc(100% - 150px);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+h1{color: gold;
+   font-family: comic;
+   font-weight: 800;
+   margin-top:50px;
+   padding:0;}
+                    
+                
+            
+    
+       
+        
+        
