@@ -1,20 +1,21 @@
-<?php include('db.php'); ?>
+<?php include('db.php'); ?> 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Kidtopia</title>
-    <link rel="stylesheet" href="numbers.css">
+    <link rel="stylesheet" href="week.css">
     <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
+
 <nav class="navbar">
     <img class="si" src="logo.png" alt="Logo Kidtopia">
-    <h1 class="navtext">Les chiffres</h1>
+    <h1 class="navtext">Les mois de l'année</h1>
 </nav>
 <div class="links">
     <?php
-    $query = "SELECT * FROM numbers";
+    $query = "SELECT * FROM mois";
     $result = $conn->query($query);
     $audioMap = [];
 
@@ -50,4 +51,3 @@
 
 </body>
 </html>
-

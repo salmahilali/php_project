@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Kidtopia</title>
-    <link rel="stylesheet" href="numbers.css">
+    <link rel="stylesheet" href="week.css">
     <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
+
+<!-- Navbar -->
 <nav class="navbar">
     <img class="si" src="logo.png" alt="Logo Kidtopia">
-    <h1 class="navtext">Les chiffres</h1>
+    <h1 class="navtext">Les jours de la semaine</h1>
 </nav>
 <div class="links">
     <?php
-    $query = "SELECT * FROM numbers";
+    $query = "SELECT * FROM day";
     $result = $conn->query($query);
     $audioMap = [];
 
@@ -50,4 +52,3 @@
 
 </body>
 </html>
-

@@ -10,11 +10,11 @@
 <body>
 <nav class="navbar">
     <img class="si" src="logo.png" alt="Logo Kidtopia">
-    <h1 class="navtext">Les chiffres</h1>
+    <h1 class="navtext">Les couleurs</h1>
 </nav>
 <div class="links">
     <?php
-    $query = "SELECT * FROM numbers";
+    $query = "SELECT * FROM colors";
     $result = $conn->query($query);
     $audioMap = [];
 
