@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 26 avr. 2025 à 18:47
+-- Généré le : dim. 27 avr. 2025 à 23:47
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -38,20 +38,20 @@ CREATE TABLE `insect` (
 --
 
 INSERT INTO `insect` (`id`, `audio_path`, `image_path`) VALUES
-(1, '', 'insect/1.png'),
-(2, '', 'insect/2.png'),
-(3, '', 'insect/3.png'),
-(4, '', 'insect/4.png'),
-(5, '', 'insect/5.png'),
-(6, '', 'insect/6.png'),
-(7, '', 'insect/7.png'),
-(8, '', 'insect/8.png'),
-(9, '', 'insect/9.png'),
-(10, '', 'insect/10.png'),
-(11, '', 'insect/11.png'),
-(12, '', 'insect/12.png'),
-(13, '', 'insect/13.png'),
-(14, '', 'insect/14.png');
+(1, 'insecto/1.mp3', 'insect/1.png'),
+(2, 'insecto/2.mp3', 'insect/2.png'),
+(3, 'insecto/3.mp3', 'insect/3.png'),
+(4, 'insecto/4.mp3', 'insect/4.png'),
+(5, 'insecto/5.mp3', 'insect/5.png'),
+(6, 'insecto/6.mp3', 'insect/6.png'),
+(7, 'insecto/7.mp3\r\n', 'insect/7.png'),
+(8, 'insecto/8.mp3\r\n', 'insect/8.png'),
+(9, 'insecto/9.mp3', 'insect/9.png'),
+(10, 'insecto/10.mp3', 'insect/10.png'),
+(11, 'insecto/11.mp3', 'insect/11.png'),
+(12, 'insecto/12.mp3', 'insect/12.png'),
+(13, 'insecto/13.mp3', 'insect/13.png'),
+(14, 'insecto/14.mp3', 'insect/14.png');
 
 --
 -- Index pour les tables déchargées
